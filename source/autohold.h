@@ -1,0 +1,21 @@
+#ifndef AUTO_HOLD_H
+#define AUTO_HOLD_H
+
+
+typedef enum
+{
+	FMS_AUTOHOLD_MODE = 0x00,
+	FSM_MANUAL_MODE,
+	FSM_ENGINE_START_MODE,
+	FSM_INVALID_MODE,
+}FsmStateEnum_t;
+
+#define  EVENT_BIT_MASK(x)   (0x01 << x)
+
+#define  EVENT_AUTOHOLD_MODE    	 EVENT_BIT_MASK( FMS_AUTOHOLD_MODE )
+#define  EVENT_MANUAL_MODE      	 EVENT_BIT_MASK( FSM_MANUAL_MODE )
+#define  EVENT_ENGINE_START_MODE     EVENT_BIT_MASK( FSM_ENGINE_START_MODE )
+
+void  autohold_task_init();
+
+#endif /* AUTO_HOLD_H */

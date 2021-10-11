@@ -1,0 +1,1355 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"DMA",
+				"DMA0"
+			],
+			[
+				"Pr",
+				"Printf"
+			],
+			[
+				"uint",
+				"uint16_t"
+			],
+			[
+				"LL_",
+				"LL_DMA_STREAM_0"
+			],
+			[
+				"uin",
+				"uint16_t"
+			],
+			[
+				"int",
+				"int16_t"
+			],
+			[
+				"i32_",
+				"i32_loadcell_cal_point0"
+			],
+			[
+				"ftp",
+				"_is_ftp_in_progress"
+			],
+			[
+				"a",
+				"address"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/D/KienMinh/Projects/CAN Bus/repo/fw_autohold/fw_autohold/source/main.c",
+			"settings":
+			{
+				"buffer_size": 831,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/D/KienMinh/Projects/CAN Bus/repo/fw_autohold/fw_autohold/source/autohold.c",
+			"settings":
+			{
+				"buffer_size": 32,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/KienMinh/Projects/CAN Bus/repo/fw_autohold/fw_autohold/drv/drv_mcp2515.c",
+			"settings":
+			{
+				"buffer_size": 3329,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/D/KienMinh/Projects/CAN Bus/repo/fw_autohold/fw_autohold/drv/drv_mcp2515.h",
+			"settings":
+			{
+				"buffer_size": 6331,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/D/KienMinh/Projects/CAN Bus/repo/fw_autohold/fw_autohold/drv/drv_spi.c",
+			"settings":
+			{
+				"buffer_size": 10871,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/D/KienMinh/Projects/CAN Bus/repo/fw_autohold/fw_autohold/board/pin_mux.c",
+			"settings":
+			{
+				"buffer_size": 7055,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "\n\nSearching 199 files for \"mcp2515_read_status\" (case sensitive)\n\nD:\\KienMinh\\Projects\\CAN Bus\\repo\\fw_autohold\\fw_autohold\\Debug\\lpc55s28_autohold.axf:\n    <binary>\n\nD:\\KienMinh\\Projects\\CAN Bus\\repo\\fw_autohold\\fw_autohold\\Debug\\lpc55s28_autohold.map:\n 3742                  0x000036fe       0x1a ./drv/drv_mcp2515.o\n 3743                  0x000036fe                mcp2515_request_to_send\n 3744:  .text.mcp2515_read_status\n 3745                  0x00003718       0x10 ./drv/drv_mcp2515.o\n 3746:                 0x00003718                mcp2515_read_status\n 3747   .text.mcp2515_bit_modify\n 3748                  0x00003728       0x26 ./drv/drv_mcp2515.o\n ....\n 5419  mcp2515_read_rx_sequence                          ./drv/drv_mcp2515.o\n 5420                                                    ./drv/drv_can.o\n 5421: mcp2515_read_status                               ./drv/drv_mcp2515.o\n 5422                                                    ./drv/drv_can.o\n 5423  mcp2515_request_to_send                           ./drv/drv_mcp2515.o\n\nD:\\KienMinh\\Projects\\CAN Bus\\repo\\fw_autohold\\fw_autohold\\Debug\\drv\\drv_mcp2515.su:\n   11  ../drv/drv_mcp2515.c:154:6:mcp2515_load_tx_buffer\t16\tstatic\n   12  ../drv/drv_mcp2515.c:159:6:mcp2515_request_to_send\t16\tstatic\n   13: ../drv/drv_mcp2515.c:164:9:mcp2515_read_status\t8\tstatic\n   14  ../drv/drv_mcp2515.c:169:9:mcp2515_get_rx_status\t8\tstatic\n   15  ../drv/drv_mcp2515.c:174:6:mcp2515_bit_modify\t16\tstatic\n\nD:\\KienMinh\\Projects\\CAN Bus\\repo\\fw_autohold\\fw_autohold\\drv\\drv_can.c:\n  137      idReg.tempEID0 = 0;\n  138  \n  139:     ctrlStatus.ctrl_status = mcp2515_read_status();\n  140  \n  141      /* 현재 Transmission 이 Pending 되지 않은 버퍼를 찾아서 전송한다. */\n  ...\n  182      ctrl_rx_status_t rxStatus;\n  183  \n  184:     rxStatus.ctrl_rx_status = mcp2515_read_status(); //mcp2515_get_rx_status(); //TNPHU\n  185  \n  186      /* 버퍼에 수신된 메시지가 있는지 확인 */\n  ...\n  231      uint8_t messageCount = 0;\n  232  \n  233:     ctrlStatus.ctrl_status = mcp2515_read_status();\n  234  \n  235      if(ctrlStatus.RX0IF != 0)\n\nD:\\KienMinh\\Projects\\CAN Bus\\repo\\fw_autohold\\fw_autohold\\drv\\drv_mcp2515.c:\n  162  }\n  163  \n  164: uint8_t mcp2515_read_status(void)\n  165  {\n  166      return spi_can_status(MCP2515_READ_STATUS);\n\nD:\\KienMinh\\Projects\\CAN Bus\\repo\\fw_autohold\\fw_autohold\\drv\\drv_mcp2515.h:\n  238  void mcp2515_load_tx_buffer(uint8_t instruction, uint8_t data);\n  239  void mcp2515_request_to_send(uint8_t instruction);\n  240: uint8_t mcp2515_read_status(void);\n  241  uint8_t mcp2515_get_rx_status(void);\n  242  void mcp2515_bit_modify(uint8_t address, uint8_t mask, uint8_t data);\n\n11 matches across 6 files\n\n\nSearching 199 files for \"can_receive\" (case sensitive)\n\nD:\\KienMinh\\Projects\\CAN Bus\\repo\\fw_autohold\\fw_autohold\\Debug\\lpc55s28_autohold.axf:\n    <binary>\n\nD:\\KienMinh\\Projects\\CAN Bus\\repo\\fw_autohold\\fw_autohold\\Debug\\lpc55s28_autohold.map:\n 3703                  0x00003178      0x156 ./drv/drv_can.o\n 3704                  0x00003178                can_init\n 3705:  .text.can_receive\n 3706                  0x000032ce       0xf8 ./drv/drv_can.o\n 3707:                 0x000032ce                can_receive\n 3708   .text.convertReg2ExtendedCANid\n 3709                  0x000033c6       0x7c ./drv/drv_can.o\n ....\n 5335                                                    ./source/main.o\n 5336  can_messages_in_buffer                            ./drv/drv_can.o\n 5337: can_receive                                       ./drv/drv_can.o\n 5338  can_sleep                                         ./drv/drv_can.o\n 5339  can_transmit                                      ./drv/drv_can.o\n\nD:\\KienMinh\\Projects\\CAN Bus\\repo\\fw_autohold\\fw_autohold\\Debug\\drv\\drv_can.su:\n    2  ../drv/drv_can.c:29:6:can_init\t40\tstatic\n    3  ../drv/drv_can.c:130:9:can_transmit\t24\tstatic\n    4: ../drv/drv_can.c:178:9:can_receive\t40\tstatic\n    5  ../drv/drv_can.c:229:9:can_messages_in_buffer\t16\tstatic\n    6  ../drv/drv_can.c:249:9:can_is_buss_off\t16\tstatic\n\nD:\\KienMinh\\Projects\\CAN Bus\\repo\\fw_autohold\\fw_autohold\\drv\\drv_can.c:\n  176  \n  177  /* CAN 메시지 수신 */\n  178: uint8_t can_receive(uCAN_MSG *tempCanMsg) \n  179  {\n  180      uint8_t returnValue = 0;\n  ...\n  384  \t\twhile(1)\n  385  \t\t{\n  386: \t\t\tif(can_receive(&rxMessage))\n  387  \t\t\t{\n  388  \t\t\t\t  txMessage.frame.idType = rxMessage.frame.idType;\n\nD:\\KienMinh\\Projects\\CAN Bus\\repo\\fw_autohold\\fw_autohold\\drv\\drv_can.h:\n   34  bool can_init(void);\n   35  uint8_t can_transmit(uCAN_MSG *tempCanMsg);\n   36: uint8_t can_receive(uCAN_MSG *tempCanMsg);\n   37  uint8_t can_messages_in_buffer(void);\n   38  uint8_t can_is_buss_off(void);\n\n9 matches across 5 files\n",
+			"settings":
+			{
+				"buffer_size": 4636,
+				"line_ending": "Windows",
+				"name": "Find Results",
+				"scratch": true
+			}
+		},
+		{
+			"file": "/D/KienMinh/Projects/CAN Bus/repo/fw_autohold/fw_autohold/drv/drv_can.c",
+			"settings":
+			{
+				"buffer_size": 11964,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/D/KienMinh/Projects/CAN Bus/repo/fw_autohold/fw_autohold/drivers/fsl_common_arm.c",
+			"settings":
+			{
+				"buffer_size": 7313,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/KienMinh/Projects/CAN Bus/repo/fw_autohold/fw_autohold/README.md",
+			"settings":
+			{
+				"buffer_size": 321,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/D/KienMinh/Projects/CAN Bus/repo/fw_autohold/fw_autohold/source/autohold.h",
+			"settings":
+			{
+				"buffer_size": 65,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/D/KienMinh/Projects/CAN Bus/repo/fw_autohold/fw_autohold"
+	],
+	"file_history":
+	[
+		"/C/Users/Lenovo/STM32CubeIDE/workspace_1.7.0/modbus_rs485/Core/Src/freertos.c",
+		"/C/Users/Lenovo/STM32CubeIDE/workspace_1.7.0/modbus_rs485/Middlewares/modbus/rtu/mbrtu.h",
+		"/C/Users/Lenovo/STM32CubeIDE/workspace_1.7.0/modbus_rs485/Middlewares/modbus/mb.c",
+		"/C/Users/Lenovo/STM32CubeIDE/workspace_1.7.0/modbus_rs485/Middlewares/modbus/include/mbconfig.h",
+		"/C/Users/Lenovo/STM32CubeIDE/workspace_1.7.0/modbus_rs485/User/mdtask.c",
+		"/C/Users/Lenovo/STM32CubeIDE/workspace_1.7.0/modbus_rs485/Core/Src/main.c",
+		"/C/Users/Lenovo/STM32CubeIDE/workspace_1.7.0/modbus_rs485/Core/Src/stm32f4xx_it.c",
+		"/C/Users/Lenovo/STM32CubeIDE/workspace_1.7.0/modbus_rs485/Middlewares/modbus/port/porttimer.c",
+		"/C/Users/Lenovo/STM32CubeIDE/workspace_1.7.0/modbus_rs485/Middlewares/modbus/port/port.h",
+		"/C/Users/Lenovo/STM32CubeIDE/workspace_1.6.1/freertos_msgbuffer/Middlewares/Third_Party/FreeRTOS/Source/include/task.h",
+		"/C/Users/Lenovo/STM32CubeIDE/workspace_1.6.1/freertos_msgbuffer/Core/Src/stm32f4xx_it.c",
+		"/C/Users/Lenovo/STM32CubeIDE/workspace_1.6.1/freertos_msgbuffer/User/streambuffer/cmd_buffer.c",
+		"/C/Users/Lenovo/STM32CubeIDE/workspace_1.6.1/freertos_msgbuffer/Core/Src/freertos.c",
+		"/C/Users/Lenovo/STM32CubeIDE/workspace_1.6.1/freertos_msgbuffer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h",
+		"/C/Users/Lenovo/STM32CubeIDE/workspace_1.6.1/freertos_msgbuffer/User/streambuffer/cmd_buffer.h",
+		"/C/Users/Lenovo/STM32CubeIDE/workspace_1.6.1/freertos_msgbuffer/Middlewares/Third_Party/FreeRTOS/Source/include/stream_buffer.h",
+		"/C/Users/Lenovo/STM32CubeIDE/workspace_1.6.1/button_timer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h",
+		"/C/Users/Lenovo/STM32CubeIDE/workspace_1.6.1/freertos_demo/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h",
+		"/D/KienMinh/Projects/GerberViewer/electron/sprite-animation-generator/node_modules/shelljs/commands.js",
+		"/D/KienMinh/Projects/GerberViewer/electron/sprite-animation-generator/node_modules/animation-strip-generator/generator.js",
+		"/D/KienMinh/Projects/GerberViewer/electron/sprite-animation-generator/node_modules/source-map/dist/source-map.min.js.map",
+		"/D/KienMinh/Projects/GerberViewer/electron/sprite-animation-generator/node_modules/animation-strip-generator/generator.js.old.js",
+		"/D/KienMinh/Projects/GerberViewer/electron/sprite-animation-generator/main.js",
+		"/D/KienMinh/Projects/GerberViewer/electron/sprite-animation-generator/node_modules/animation-strip-generator/main.js",
+		"/C/Users/Lenovo/STM32CubeIDE/workspace_1.6.1/spi_acc_sensor/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_spi.h",
+		"/C/Users/Lenovo/STM32CubeIDE/workspace_1.6.1/spi_acc_sensor/Core/Inc/spi.h",
+		"/C/Users/Lenovo/STM32CubeIDE/workspace_1.6.1/spi_acc_sensor/Core/Inc/main.h",
+		"/C/Users/Lenovo/STM32CubeIDE/workspace_1.6.1/spi_acc_sensor/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h",
+		"/C/Users/Lenovo/STM32CubeIDE/workspace_1.6.1/spi_acc_sensor/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c",
+		"/D/KienMinh/Projects/NBIOT_BLE/android/app/build/intermediates/dex/withFileLogsDebug/mergeExtDexWithFileLogsDebug/classes2.dex",
+		"/C/Users/Lenovo/ncs/v1.5.1/nrf/samples/nrf9160/mqtt_simple/build_thingy91_nrf9160/zephyr/include/generated/autoconf.h",
+		"/D/workspace/cubemx_basic_May_2021/gpio_with_interrupt/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_gpio.h",
+		"/D/workspace/cubemx_basic_May_2021/gpio_with_interrupt/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_gpio.c",
+		"/D/workspace/cubemx_basic_May_2021/gpio_with_interrupt/Core/Src/gpio.c",
+		"/D/workspace/cubemx_basic_May_2021/gpio_with_interrupt/Core/Src/stm32f4xx_it.c",
+		"/D/workspace/cubemx_basic_May_2021/gpio_with_interrupt/Core/Src/main.c",
+		"/D/workspace/cubemx_basic_May_2021/gpio_with_interrupt/Core/Inc/gpio.h",
+		"/C/Users/Lenovo/Documents/SEGGER Embedded Studio for ARM Projects/Executable_1/nRF/Device/Include/nrf5340_application.h",
+		"/C/Users/Lenovo/Documents/SEGGER Embedded Studio for ARM Projects/Executable_1/nRF/Device/Include/system_nrf.h",
+		"/C/Users/Lenovo/Documents/SEGGER Embedded Studio for ARM Projects/Executable_1/nRF/Device/Include/nrf52840_bitfields.h",
+		"/C/Users/Lenovo/Documents/SEGGER Embedded Studio for ARM Projects/Executable_1/hal_timer.c",
+		"/C/Users/Lenovo/Documents/SEGGER Embedded Studio for ARM Projects/Executable_1/hal_timer.h",
+		"/C/Users/Lenovo/Documents/SEGGER Embedded Studio for ARM Projects/Executable_1/nRF/Device/Include/nrf52805_bitfields.h",
+		"/C/Users/Lenovo/Documents/SEGGER Embedded Studio for ARM Projects/Executable_1/nRF/Device/Include/nrf51_bitfields.h",
+		"/C/Users/Lenovo/Documents/SEGGER Embedded Studio for ARM Projects/Executable_1/nRF/Device/Include/nrf.h",
+		"/C/Users/Lenovo/Documents/SEGGER Embedded Studio for ARM Projects/Executable_1/drv_lps25h.h",
+		"/C/Users/Lenovo/Documents/SEGGER Embedded Studio for ARM Projects/Executable_1/main.c",
+		"/C/Users/Lenovo/Documents/SEGGER Embedded Studio for ARM Projects/Executable_1/hal_radio.c",
+		"/C/Users/Lenovo/Documents/SEGGER Embedded Studio for ARM Projects/Executable_1/drv_lps25h.c",
+		"/C/Users/Lenovo/Documents/SEGGER Embedded Studio for ARM Projects/Executable_1/drv_lps25h_sim.c",
+		"/C/Users/Lenovo/Documents/SEGGER Embedded Studio for ARM Projects/Executable_1/hal_clock.c",
+		"/C/Users/Lenovo/Documents/SEGGER Embedded Studio for ARM Projects/Executable_1/STM32L4xx/CMSIS/Device/Source/system_stm32l4xx.c",
+		"/D/workspace/cubemx_basic_May_2021/blinky_led/Debug/blinky_led.bin",
+		"/D/KienMinh/Customer/NATASCO/Reference/solar_sensor_beacon-master/solar_sensor_beacon-master/external/comp_generic/hal/inc/hal_serial.h",
+		"/D/KienMinh/Customer/NATASCO/Reference/solar_sensor_beacon-master/solar_sensor_beacon-master/toolchain/gcc/file_list.mk",
+		"/C/Users/Lenovo/ncs/v1.5.1/zephyr/samples/hello_world/build_nrf52840dk_nrf52811/zephyr/zephyr.hex",
+		"/D/KienMinh/Customer/EmDat/repo/trezor-mcu-1.6.1/trezor-mcu-1.6.1/oled.h",
+		"/D/KienMinh/Customer/EmDat/repo/trezor-mcu-1.6.1/trezor-mcu-1.6.1/firmware/trezor.c",
+		"/D/KienMinh/Customer/EmDat/repo/trezor-mcu-1.6.1/trezor-mcu-1.6.1/memory_app_1.0.0.ld",
+		"/D/workspace/cubemx/trezo_test/firmware/nanopb/messages-binance.pb.c",
+		"/D/KienMinh/Customer/EmDat/repo/trezor-common-master/trezor-common-master/protob/messages.proto",
+		"/D/KienMinh/Customer/EmDat/repo/trezor-mcu-1.6.1/trezor-mcu-1.6.1/firmware/protob/messages.proto",
+		"/D/KienMinh/Customer/EmDat/repo/nanopb-master/nanopb-master/pb.h",
+		"/D/KienMinh/Customer/EmDat/repo/trezor-mcu-1.6.1/trezor-mcu-1.6.1/.gitmodules",
+		"/D/KienMinh/Customer/EmDat/repo/trezor-mcu-1.6.1/trezor-mcu-1.6.1/memory.c",
+		"/D/KienMinh/Customer/EmDat/repo/trezor-mcu-1.6.1/trezor-mcu-1.6.1/bootloader/bootloader.c",
+		"/D/KienMinh/Customer/EmDat/repo/trezor-mcu-1.6.1/trezor-mcu-1.6.1/firmware/bl_data-gen.py",
+		"/D/KienMinh/Customer/EmDat/repo/trezor-crypto-master/trezor-crypto-master/bip32.c",
+		"/D/KienMinh/Customer/EmDat/repo/trezor-mcu-1.6.1/trezor-mcu-1.6.1/firmware/coins-gen.py",
+		"/D/KienMinh/Customer/EmDat/repo/trezor-mcu-1.6.1/trezor-mcu-1.6.1/gen/bitmaps.h",
+		"/D/KienMinh/Customer/EmDat/repo/trezor-common-master/trezor-common-master/defs/coins_details.json",
+		"/D/KienMinh/Customer/EmDat/repo/trezor-mcu-1.6.1/trezor-mcu-1.6.1/firmware/coins.json",
+		"/D/KienMinh/Customer/EmDat/repo/trezor-mcu-1.6.1/trezor-mcu-1.6.1/firmware/Makefile",
+		"/D/workspace/cubemx/trezo_test/library/libopencm3/include/libopencm3/cm3/nvic.h",
+		"/D/KienMinh/Customer/EmDat/repo/trezor-mcu-1.6.1/trezor-mcu-1.6.1/setup.h",
+		"/D/KienMinh/Customer/EmDat/repo/trezor-mcu-1.6.1/trezor-mcu-1.6.1/gen/bitmaps.c",
+		"/D/workspace/cubemx/trezo_test/library/libopencm3/include/libopencm3/cm3/vector.h",
+		"/D/workspace/cubemx/trezo_test/library/libopencm3/include/libopencm3/dispatch/nvic.h",
+		"/D/KienMinh/Customer/EmDat/repo/trezor-mcu-1.6.1/trezor-mcu-1.6.1/firmware/messages.h",
+		"/D/workspace/cubemx/trezo_test/library/libopencm3/lib/cm3/nvic.c",
+		"/D/KienMinh/Customer/EmDat/repo/trezor-mcu-1.6.1/trezor-mcu-1.6.1/firmware/protob/Makefile",
+		"/D/KienMinh/Customer/EmDat/repo/trezor-crypto-master/trezor-crypto-master/pbkdf2.h",
+		"/D/KienMinh/Customer/EmDat/repo/trezor-mcu-1.6.1/trezor-mcu-1.6.1/build-firmware.sh",
+		"/D/KienMinh/Customer/EmDat/repo/nanopb-master/nanopb-master/generator/nanopb_generator.py",
+		"/D/KienMinh/Customer/EmDat/repo/trezor-common-master/trezor-common-master/protob/messages-management.proto",
+		"/D/KienMinh/Customer/EmDat/repo/trezor-mcu-1.6.1/trezor-mcu-1.6.1/firmware/crypto.c",
+		"/D/KienMinh/Customer/EmDat/repo/trezor-common-master/trezor-common-master/protob/messages-bitcoin.proto",
+		"/D/KienMinh/Customer/EmDat/repo/trezor-mcu-1.6.1/trezor-mcu-1.6.1/memory.h",
+		"/D/KienMinh/Customer/EmDat/repo/trezor-mcu-1.6.1/trezor-mcu-1.6.1/bootloader/usb.c",
+		"/D/workspace/cubemx/trezo_test/firmware/nanopb/messages-crypto.pb.h",
+		"/D/KienMinh/Customer/EmDat/repo/trezor-common-master/trezor-common-master/protob/Makefile",
+		"/D/temp/printer-master/printer-master/cmd/print/rawprint/x64/Debug/test_dll.go",
+		"/D/temp/printer-master/printer-master/cmd/print/rawprint/Debug/test_dll.go",
+		"/C/Users/Lenovo/Downloads/go-winc_1615015762/main.go",
+		"/D/temp/printer-master/printer-master/cmd/print/print.go",
+		"/D/temp/printer-master/printer-master/printer_test.go",
+		"/D/temp/printer-master/printer-master/cmd/print/escp.go",
+		"/D/Hi-Tech/Projects/LED Matrix/source code/esp8266led/esp8266led/backup.ino",
+		"/D/Hi-Tech/Projects/LED Matrix/source code/esp8266led/esp8266led/esp8266led.ino",
+		"/E/workspace/cubemx/demo_usart/MDK-ARM/demo_usart/stm32f4xx_hal_gpio.crf",
+		"/E/workspace/cubemx/demo_button_chase_LED/Core/Inc/tim.h",
+		"/E/workspace/cubemx/demo_button_chase_LED/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h",
+		"/E/workspace/cubemx/demo_button_chase_LED/Core/Src/tim.c",
+		"/E/workspace/cubemx/demo_button_chase_LED/Core/Src/stm32f4xx_it.c",
+		"/E/workspace/cubemx/demo_button_chase_LED/Core/Src/gpio.c",
+		"/D/Hi-Tech/Projects/Trinh_Oversea/MIT_1/MIT-Labor_1/mbed-os/drivers/RealTimeClock.h",
+		"/D/Hi-Tech/Repo_STM/hitech_stm32_basic/sample code/button_timer/MDK-ARM/button_timer/stm32f4xx_hal_adc.crf",
+		"/D/KienMinh/Customer/Lansium/Development/Sensor/stm32/software/src/configs/config_energy.h",
+		"/D/KienMinh/Customer/Lansium/Development/Sensor/stm32/software/src/communication.h",
+		"/D/Hi-Tech/Repo_STM/hitech_stm32_basic/sample code/button_timer/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h",
+		"/D/Hi-Tech/Repo_STM/hitech_stm32_basic/sample code/button_timer/User/LIS3DSH/LIS3DSH.h",
+		"/D/Hi-Tech/Repo_STM/hitech_stm32_basic/sample code/button_timer/Core/Inc/gpio.h",
+		"/D/Hi-Tech/Repo_STM/hitech_stm32_basic/sample code/button_timer/User/LIS3DSH/LIS3DSH.c",
+		"/D/Hi-Tech/Repo_STM/hitech_stm32_basic/sample code/button_timer/Core/Src/gpio.c",
+		"/D/Hi-Tech/Repo_STM/hitech_stm32_basic/sample code/button_timer/User/LIS3DSH/acc_sensor_driver.c",
+		"/D/Hi-Tech/Repo_STM/hitech_stm32_basic/sample code/button_timer/Core/Inc/main.h",
+		"/D/KienMinh/Radio 4.0/Development/Streaming Tool/obs-dev/samples/obs_test.py",
+		"/C/Users/Lenovo/AppData/Local/Programs/Python/Python39/Lib/site-packages/obswsrc/requests.py",
+		"/D/KienMinh/Radio 4.0/Development/Streaming Tool/gstd-1.x-master/tests/libgstc/c/meson.build",
+		"/D/KienMinh/Radio 4.0/Development/Streaming Tool/gstd-1.x-master/tests/meson.build",
+		"/D/KienMinh/Radio 4.0/Development/Streaming Tool/gstd-1.x-master/meson.build",
+		"/D/KienMinh/Radio 4.0/Development/Streaming Tool/gstd-1.x-master/libgstc/c/poll.c",
+		"/D/KienMinh/Radio 4.0/Development/Streaming Tool/gstd-1.x-master/libgstc/c/poll.h",
+		"/D/Hi-Tech/Repo/resource/lession 6/mqtt_test/mqtt_test.ino.bak",
+		"/D/KienMinh/Radio 4.0/Development/Streaming Tool/gstd-1.x-master/buiddir/build.ninja",
+		"/D/KienMinh/Radio 4.0/Development/Streaming Tool/gstd-1.x-master/builddir/meson-logs/meson-log.txt",
+		"/D/KienMinh/Radio 4.0/Development/Streaming Tool/gstd-1.x-master/buiddir/meson-logs/meson-log.txt",
+		"/D/KienMinh/Radio 4.0/Development/Streaming Tool/gstd-1.x-master/builddir/build.ninja"
+	],
+	"find":
+	{
+		"height": 48.0
+	},
+	"find_in_files":
+	{
+		"height": 373.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"can_receive",
+			"mcp2515_read_status",
+			"mask",
+			"0x0E",
+			"mcp2515_bit_modify",
+			"mcp2515_write_byte",
+			"mcp2515_read_status",
+			"MCP2515_READ_STATUS",
+			"SPI_CLOCK_MODE0",
+			"SDK_DelayAtLeastUs"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 7,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/D/KienMinh/Projects/CAN Bus/repo/fw_autohold/fw_autohold/source/main.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 831,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								211,
+								211
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/D/KienMinh/Projects/CAN Bus/repo/fw_autohold/fw_autohold/source/autohold.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 32,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								32,
+								32
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/D/KienMinh/Projects/CAN Bus/repo/fw_autohold/fw_autohold/drv/drv_mcp2515.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3329,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								687,
+								687
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 917.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/D/KienMinh/Projects/CAN Bus/repo/fw_autohold/fw_autohold/drv/drv_mcp2515.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6331,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2801,
+								2814
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1862.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/D/KienMinh/Projects/CAN Bus/repo/fw_autohold/fw_autohold/drv/drv_spi.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 10871,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5608,
+								5608
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3726.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/D/KienMinh/Projects/CAN Bus/repo/fw_autohold/fw_autohold/board/pin_mux.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7055,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6570,
+								6572
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3835.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4636,
+						"regions":
+						{
+							"match":
+							{
+								"flags": 112,
+								"regions":
+								[
+									[
+										406,
+										425
+									],
+									[
+										540,
+										559
+									],
+									[
+										821,
+										840
+									],
+									[
+										1295,
+										1314
+									],
+									[
+										1601,
+										1620
+									],
+									[
+										1784,
+										1803
+									],
+									[
+										1974,
+										1993
+									],
+									[
+										2152,
+										2171
+									],
+									[
+										2464,
+										2483
+									],
+									[
+										3018,
+										3029
+									],
+									[
+										3140,
+										3151
+									],
+									[
+										3411,
+										3422
+									],
+									[
+										3835,
+										3846
+									],
+									[
+										4097,
+										4108
+									],
+									[
+										4225,
+										4236
+									],
+									[
+										4492,
+										4503
+									],
+									[
+										4636,
+										4636
+									]
+								],
+								"scope": ""
+							}
+						},
+						"selection":
+						[
+							[
+								4233,
+								4233
+							]
+						],
+						"settings":
+						{
+							"detect_indentation": false,
+							"line_numbers": false,
+							"output_tag": 8,
+							"result_base_dir": "",
+							"result_file_regex": "^([^ \t].*):$",
+							"result_line_regex": "^ +([0-9]+):",
+							"scroll_past_end": true,
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 2052.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "/D/KienMinh/Projects/CAN Bus/repo/fw_autohold/fw_autohold/drv/drv_can.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 11964,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								10782,
+								10782
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 10132.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "/D/KienMinh/Projects/CAN Bus/repo/fw_autohold/fw_autohold/drivers/fsl_common_arm.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7313,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6340,
+								6340
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 5268.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "/D/KienMinh/Projects/CAN Bus/repo/fw_autohold/fw_autohold/README.md",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 321,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								87,
+								87
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Markdown/Markdown.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "/D/KienMinh/Projects/CAN Bus/repo/fw_autohold/fw_autohold/source/autohold.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 65,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								65,
+								65
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 36.0
+	},
+	"input":
+	{
+		"height": 127.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "autohold.sublime-project",
+	"replace":
+	{
+		"height": 68.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"drv_sp",
+				"drv\\drv_spi.c"
+			],
+			[
+				"drv_mc",
+				"drv\\drv_mcp2515.h"
+			],
+			[
+				"pinmu",
+				"board\\pin_mux.c"
+			],
+			[
+				"drv",
+				"drv\\drv_spi.c"
+			],
+			[
+				"mcp",
+				"drv\\drv_mcp2515.c"
+			],
+			[
+				"main",
+				"source\\main.c"
+			],
+			[
+				"mdt",
+				"User\\mdtask.c"
+			],
+			[
+				"mbrtu",
+				"Middlewares\\modbus\\rtu\\mbrtu.h"
+			],
+			[
+				"fre",
+				"Core\\Src\\freertos.c"
+			],
+			[
+				"it",
+				"Core\\Src\\stm32f4xx_it.c"
+			],
+			[
+				"porttim",
+				"Middlewares\\modbus\\port\\porttimer.c"
+			],
+			[
+				"port",
+				"Middlewares\\modbus\\port\\port.h"
+			],
+			[
+				"mbcon",
+				"Middlewares\\modbus\\include\\mbconfig.h"
+			],
+			[
+				"ll_gpio",
+				"Drivers\\STM32F4xx_HAL_Driver\\Inc\\stm32f4xx_ll_gpio.h"
+			],
+			[
+				"ll_ua",
+				"Drivers\\STM32F4xx_HAL_Driver\\Inc\\stm32f4xx_ll_usart.h"
+			],
+			[
+				"tas",
+				"Middlewares\\Third_Party\\FreeRTOS\\Source\\include\\task.h"
+			],
+			[
+				"hal_tim",
+				"Drivers\\STM32F4xx_HAL_Driver\\Inc\\stm32f4xx_hal_tim.h"
+			],
+			[
+				"task.h",
+				"Middlewares\\Third_Party\\FreeRTOS\\Source\\include\\task.h"
+			],
+			[
+				"hal_ua",
+				"Drivers\\STM32F4xx_HAL_Driver\\Inc\\stm32f4xx_hal_uart.h"
+			],
+			[
+				"hal_i2c",
+				"Drivers\\STM32F4xx_HAL_Driver\\Src\\stm32f4xx_hal_i2c.c"
+			],
+			[
+				"ams",
+				"targets\\stm32l432\\src\\ams.h"
+			],
+			[
+				"main.c",
+				"pc\\main.c"
+			],
+			[
+				"am",
+				"targets\\stm32l432\\src\\ams.c"
+			],
+			[
+				"usa",
+				"Core\\Src\\usart.c"
+			],
+			[
+				"ll_usa",
+				"Drivers\\STM32F4xx_HAL_Driver\\Inc\\stm32f4xx_ll_usart.h"
+			],
+			[
+				"ll_dm",
+				"Drivers\\STM32F4xx_HAL_Driver\\Inc\\stm32f4xx_ll_dma.h"
+			],
+			[
+				"ll_adc.h",
+				"Drivers\\STM32F4xx_HAL_Driver\\Inc\\stm32f4xx_ll_adc.h"
+			],
+			[
+				"main.",
+				"Core\\Src\\main.c"
+			],
+			[
+				"tim.h",
+				"Core\\Inc\\tim.h"
+			],
+			[
+				"hal_dma.c",
+				"Drivers\\STM32F4xx_HAL_Driver\\Src\\stm32f4xx_hal_dma.c"
+			],
+			[
+				"hal_dma",
+				"Drivers\\STM32F4xx_HAL_Driver\\Inc\\stm32f4xx_hal_dma.h"
+			],
+			[
+				"ll_dma",
+				"Drivers\\STM32F4xx_HAL_Driver\\Inc\\stm32f4xx_ll_dma.h"
+			],
+			[
+				"ll_tim",
+				"Drivers\\STM32F4xx_HAL_Driver\\Inc\\stm32f4xx_ll_tim.h"
+			],
+			[
+				"tim",
+				"Core\\Src\\tim.c"
+			],
+			[
+				"ll_h",
+				"Drivers\\STM32F4xx_HAL_Driver\\Inc\\stm32f4xx_ll_tim.h"
+			],
+			[
+				"hal_gpio",
+				"Drivers\\STM32F4xx_HAL_Driver\\Src\\stm32f4xx_hal_gpio.c"
+			],
+			[
+				"hal_gpi",
+				"Drivers\\STM32F4xx_HAL_Driver\\Inc\\stm32f4xx_hal_gpio.h"
+			],
+			[
+				"ll_",
+				"Drivers\\STM32F4xx_HAL_Driver\\Inc\\stm32f4xx_ll_gpio.h"
+			],
+			[
+				"ll_gpio.h",
+				"Drivers\\STM32F4xx_HAL_Driver\\Inc\\stm32f4xx_ll_gpio.h"
+			],
+			[
+				"it.c",
+				"Core\\Src\\stm32f4xx_it.c"
+			],
+			[
+				"freertos.c",
+				"Core\\Src\\freertos.c"
+			],
+			[
+				"she",
+				"node_modules\\shelljs\\shell.js"
+			],
+			[
+				"command",
+				"node_modules\\shelljs\\commands.js"
+			],
+			[
+				"hal_spi",
+				"Drivers\\STM32F4xx_HAL_Driver\\Src\\stm32f4xx_hal_gpio.c"
+			],
+			[
+				"spi.h",
+				"Core\\Inc\\spi.h"
+			],
+			[
+				"main.h",
+				"Core\\Inc\\main.h"
+			],
+			[
+				"ll_spi",
+				"Drivers\\STM32F4xx_HAL_Driver\\Inc\\stm32f4xx_ll_spi.h"
+			],
+			[
+				"it.",
+				"Core\\Src\\stm32f4xx_it.c"
+			],
+			[
+				"usart",
+				"Core\\Src\\usart.c"
+			],
+			[
+				"core",
+				"Drivers\\CMSIS\\Include\\core_cm4.h"
+			],
+			[
+				"stm32f407xx.h",
+				"Drivers\\CMSIS\\Device\\ST\\STM32F4xx\\Include\\stm32f407xx.h"
+			],
+			[
+				"stm32f4xx.h",
+				"Drivers\\CMSIS\\Device\\ST\\STM32F4xx\\Include\\stm32f4xx.h"
+			],
+			[
+				"usart.c",
+				"Core\\Src\\usart.c"
+			],
+			[
+				"usar",
+				"Core\\Inc\\usart.h"
+			],
+			[
+				"ll_usar",
+				"Drivers\\STM32F4xx_HAL_Driver\\Inc\\stm32f4xx_ll_usart.h"
+			],
+			[
+				"adc.h",
+				"Core\\Inc\\adc.h"
+			],
+			[
+				"ll_adc",
+				"Drivers\\STM32F4xx_HAL_Driver\\Inc\\stm32f4xx_ll_adc.h"
+			],
+			[
+				"adc.c",
+				"Core\\Src\\adc.c"
+			],
+			[
+				"ll_ad",
+				"Drivers\\STM32F4xx_HAL_Driver\\Inc\\stm32f4xx_ll_adc.h"
+			],
+			[
+				"ll_adc.c",
+				"Drivers\\STM32F4xx_HAL_Driver\\Src\\stm32f4xx_ll_adc.c"
+			],
+			[
+				"ll_ext",
+				"Drivers\\STM32F4xx_HAL_Driver\\Inc\\stm32f4xx_ll_exti.h"
+			],
+			[
+				"ll_gpi",
+				"Drivers\\STM32F4xx_HAL_Driver\\Inc\\stm32f4xx_ll_gpio.h"
+			],
+			[
+				"ll_tim.h",
+				"Drivers\\STM32F4xx_HAL_Driver\\Inc\\stm32f4xx_ll_tim.h"
+			],
+			[
+				"ll_tim.c",
+				"Drivers\\STM32F4xx_HAL_Driver\\Src\\stm32f4xx_ll_tim.c"
+			],
+			[
+				"tim.c",
+				"Core\\Src\\tim.c"
+			],
+			[
+				"ll_gp",
+				"Drivers\\STM32F4xx_HAL_Driver\\Inc\\stm32f4xx_ll_gpio.h"
+			],
+			[
+				"ll_gpio.",
+				"Drivers\\STM32F4xx_HAL_Driver\\Inc\\stm32f4xx_ll_gpio.h"
+			],
+			[
+				"gpio.",
+				"Core\\Inc\\gpio.h"
+			],
+			[
+				"mainh",
+				"Core\\Inc\\main.h"
+			],
+			[
+				"dr",
+				"drv_lps25h_sim.c"
+			],
+			[
+				"sys",
+				"sys_cfg.h"
+			],
+			[
+				"nrf52.h",
+				"nRF\\Device\\Include\\nrf52.h"
+			],
+			[
+				"nrf52_to",
+				"nRF\\Device\\Include\\nrf52_to_nrf52810.h"
+			],
+			[
+				"nrf.h",
+				"nRF\\Device\\Include\\nrf.h"
+			],
+			[
+				"nrf.",
+				"nRF\\Device\\Include\\nrf.h"
+			],
+			[
+				"nrf52.",
+				"nRF\\Device\\Include\\nrf52.h"
+			],
+			[
+				"hal_cl",
+				"hal_clock.c"
+			],
+			[
+				"systeM_",
+				"nRF\\Device\\Source\\system_nrf52.c"
+			],
+			[
+				"system",
+				"nRF\\Device\\Include\\system_nrf.h"
+			],
+			[
+				"hal_clo",
+				"hal_clock.c"
+			],
+			[
+				"hal_r",
+				"hal_radio.c"
+			],
+			[
+				"hal",
+				"hal_timer.c"
+			],
+			[
+				"hal_t",
+				"hal_timer.h"
+			],
+			[
+				"nrf",
+				"nRF\\Device\\Include\\nrf.h"
+			],
+			[
+				"haLtim",
+				"hal_timer.c"
+			],
+			[
+				".bin",
+				"Debug\\blinky_led.bin"
+			],
+			[
+				"cfg",
+				"toolchain\\gcc\\file_list.mk"
+			],
+			[
+				"hal_ser",
+				"external\\comp_generic\\hal\\inc\\hal_serial.h"
+			],
+			[
+				".hex",
+				"build_nrf52840dk_nrf52811\\zephyr\\zephyr.hex"
+			],
+			[
+				".map",
+				"build_nrf52840dk_nrf52811\\zephyr\\zephyr.map"
+			],
+			[
+				"yaml",
+				"sample.yaml"
+			],
+			[
+				"vivado",
+				"chipfail-glitcher-master\\chipfail-glitcher.runs\\impl_1\\vivado.jou"
+			],
+			[
+				"bootloader",
+				"targets\\stm32l432\\bootloader\\bootloader.c"
+			],
+			[
+				"boot",
+				"docs\\bootloader-mode.md"
+			],
+			[
+				"lis",
+				"User\\LIS3DSH\\LIS3DSH.h"
+			],
+			[
+				"acc",
+				"User\\LIS3DSH\\acc_sensor_driver.c"
+			],
+			[
+				"ll_usart.",
+				"Drivers\\STM32F4xx_HAL_Driver\\Src\\stm32f4xx_ll_usart.c"
+			],
+			[
+				"meta",
+				"docs\\metadata-statements.md"
+			],
+			[
+				"messages-binance.pb",
+				"nanopb\\messages-binance.pb.c"
+			],
+			[
+				"generator/",
+				"nanopb-master\\generator\\nanopb_generator.py"
+			],
+			[
+				"trezor-common/protob/messages.proto",
+				"trezor-common-master\\protob\\messages.proto"
+			],
+			[
+				"messages.proto",
+				"trezor-mcu-1.6.1\\firmware\\protob\\messages.proto"
+			],
+			[
+				"message.p",
+				"trezor-mcu-1.6.1\\firmware\\protob\\messages.proto"
+			],
+			[
+				"pb.h",
+				"nanopb-master\\pb.h"
+			],
+			[
+				"bui",
+				"trezor-mcu-1.6.1\\build-firmware.sh"
+			],
+			[
+				"message.",
+				"trezor-mcu-1.6.1\\firmware\\messages.h"
+			],
+			[
+				"niv",
+				"libopencm3\\include\\libopencm3\\cm3\\nvic.h"
+			],
+			[
+				"setup.h",
+				"trezor-mcu-1.6.1\\setup.h"
+			],
+			[
+				"bitmap.h",
+				"trezor-mcu-1.6.1\\gen\\bitmaps.h"
+			],
+			[
+				"trezor-common/coins.json",
+				"trezor-common-master\\defs\\coins_details.json"
+			],
+			[
+				"coins.j",
+				"trezor-mcu-1.6.1\\firmware\\coins.json"
+			],
+			[
+				"coins-ge",
+				"trezor-mcu-1.6.1\\firmware\\coins-gen.py"
+			],
+			[
+				"tre",
+				"trezor-mcu-1.6.1\\firmware\\trezor.c"
+			],
+			[
+				"coins",
+				"trezor-mcu-1.6.1\\firmware\\coins-gen.py"
+			],
+			[
+				"bl_da",
+				"trezor-mcu-1.6.1\\firmware\\bl_data-gen.py"
+			],
+			[
+				"bip32",
+				"trezor-crypto-master\\bip32.c"
+			],
+			[
+				"ol",
+				"oled.h"
+			],
+			[
+				".ld",
+				"memory_app_1.0.0.ld"
+			],
+			[
+				"res",
+				"reset_printer.txt"
+			],
+			[
+				"angular.json",
+				"angular.json"
+			],
+			[
+				"angular",
+				"angular.json"
+			],
+			[
+				"angular-cli.json",
+				"node_modules\\@schematics\\angular\\migrations\\migration-collection.json"
+			],
+			[
+				"i2c.h",
+				"Core\\Inc\\i2c.h"
+			],
+			[
+				"exti",
+				"Drivers\\STM32F4xx_HAL_Driver\\Inc\\stm32f4xx_ll_exti.h"
+			],
+			[
+				"ll_usart",
+				"Drivers\\STM32F4xx_HAL_Driver\\Inc\\stm32f4xx_ll_usart.h"
+			],
+			[
+				"ll_usart.c",
+				"Drivers\\STM32F4xx_HAL_Driver\\Src\\stm32f4xx_ll_usart.c"
+			],
+			[
+				"hal_exti",
+				"Drivers\\STM32F4xx_HAL_Driver\\Src\\stm32f4xx_hal_exti.c"
+			],
+			[
+				"ext",
+				"Drivers\\STM32F4xx_HAL_Driver\\Inc\\stm32f4xx_hal_exti.h"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 278.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
